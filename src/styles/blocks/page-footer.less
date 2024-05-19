@@ -1,0 +1,143 @@
+.page-footer{
+    box-sizing: border-box;
+    padding: 60px 0 75px;
+    padding-bottom: 75px;
+    &__container{
+        .container;
+    }
+
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__border{
+        display: flex;
+        margin-bottom: 60px;
+        &::before, &::after{
+            content: '';
+            flex-grow:1;
+            height: 2px;
+            width: 2px;
+        }
+        &::before{
+            margin-right: 50px;
+            background: linear-gradient(270deg, #1C1B1B 0%, rgba(255, 255, 255, 0.00) 82.86%);
+        }
+        &::after{
+            margin-left: 50px;
+            background: linear-gradient(90deg, #1C1B1B 0%, rgba(255, 255, 255, 0.00) 100%);
+        }
+    }
+    &__start-panel{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 60px;
+
+        @media @bw370{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__nav{
+        margin-right: 30px;
+        position: relative;
+        padding-left: 26px;
+        display: flex;
+        flex-direction: column;
+        gap:22px;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 4px;
+            background-color: @red;
+        }
+
+        @media @bw768{
+            margin-bottom: 65px;
+        }
+    }
+    &__nav-link{
+        display: block;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        color:@black;
+        transition:  color 0.2s;
+        &:hover{
+            @media(hover:hover){
+                color:@red;
+            }
+        }
+
+        &:active{
+            color:@red;
+        }
+
+        @media @bw370{
+            font-size: 14px;
+        }
+
+        @media @bw768{
+            font-size: 16px;
+        }
+    }
+
+    &__end-panel{
+        display: grid; 
+        grid-template-columns: 1fr 160px 1fr; 
+        grid-template-rows: 0.5fr 0.5fr; 
+        gap: 20px 203px;
+        grid-template-areas: 
+        "millenials icons ."
+        "cookies_politica icons tagree"; 
+
+        &__millenials{
+            grid-area: millenials;
+            font-family: "Open Sans", sans-serif;
+            font-size: 16px
+        }
+
+        &__cookies_politica{
+            grid-area: cookies_politica;
+            font-family: "Open Sans", sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        &__icons{
+            grid-area: icons;  
+            display: flex;
+            justify-content: space-between; 
+            
+            &--vk{
+                max-width: 58px;
+                max-height: 58px;
+            }
+
+            &--insta{
+                max-width: 58px;
+                max-height: 58px;
+            }
+        }
+
+        &__tagree{
+            grid-area: tagree;
+            font-family: "Open Sans", sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            max-height: 70px;
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            
+        }
+
+        
+    }
+}
